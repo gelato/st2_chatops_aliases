@@ -1,0 +1,30 @@
+---
+
+  name: chatops.ansible_red_alert
+  action_ref: ansible.playbook
+  description: Trigger Red Alert
+  formats:
+    - display: "red alert"
+      representation:
+        - "playbook {{playbook=/opt/stackstorm/packs/${ST2_ACTION_PACK_NAME}/playbooks/red_alert.yaml}}"
+  result:
+    format: |
+      Run red alert task on `{{ execution.parameters.hosts }}` host(s): {~}
+      {% if execution.result.stderr %}
+      *Exit Status*: `{{ execution.result.return_code }}`
+      *Stderr:* ```{{ execution.result.stderr }}```
+      *Stdout:*
+      {% endif %}
+      ```{{ execution.result.stdout }}```
+    extra:
+      slack:
+        color: "{% if execution.result.succeeded %}good{% else %}danger{% endif %}"
+        fields:
+          - title: Ran task
+            value: "{{ execution.result.stdout|regex_replace('(?!changed=1).', '')|wordcount }}"
+            short: true
+          - title: Executed in
+            value: ":timer_clock: {{ execution.elapsed_seconds | to_human_time_from_seconds }}"
+            short: true
+        footer: "{{ execution.id }}"
+        footer_icon: "https://stackstorm.com/wp/wp-content/uploads/2015/01/favicon.png"

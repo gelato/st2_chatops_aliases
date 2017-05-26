@@ -7,6 +7,6 @@ keywords:
   - chatops
   - aliases
   - ansible
-version: 0.2.0
-author: armab
-email: armab@stackstorm.com
+version: 0.1.0
+author: gelato
+email: mizeraj@gmail.com

@@ -1,0 +1,7 @@
+---
+- name: Update package on remote hosts, run on 25% of servers at a time
+  hosts: red_alert
+  become: True
+  become_user: root
+  roles:
+    - role: red_alert
