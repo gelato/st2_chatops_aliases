@@ -1,7 +1,7 @@
 ---
 
   - name: Transfer red alert sound file to server
-      src: "files/red_alert.{{ item }}"
+      src: files/red_alert."{{ item }}"
       dest: /var/lib/asterisk/sounds
       owner: root
       group: asterisk
