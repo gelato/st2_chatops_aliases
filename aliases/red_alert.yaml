@@ -6,7 +6,7 @@
   formats:
     - display: "red alert"
       representation:
-        - "playbook {{playbook=/opt/stackstorm/packs/${ST2_ACTION_PACK_NAME}/playbooks/red_alert.yaml}}"
+        - "red alert {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}}"
   result:
     format: |
       Run red alert task on `{{ execution.parameters.hosts }}` host(s): {~}
