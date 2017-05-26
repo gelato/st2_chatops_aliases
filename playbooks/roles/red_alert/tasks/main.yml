@@ -7,10 +7,10 @@
     group: asterisk
     mode: 0664
     with_items:
-      - gsm
-      - alaw
-      - wav
-      - ulaw
+    #  - gsm
+    #  - alaw
+     - wav
+    #  - ulaw
 
   - name: Transfer template to server
     src: templates/red_alert.j2
