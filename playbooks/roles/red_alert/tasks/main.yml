@@ -30,7 +30,7 @@
   copy:
     src: "/opt/stackstorm/packs/st2_chatops_aliases/playbooks/roles/red_alert/files/red_alert-{{ item }}.call"
     dest: "/var/spool/asterisk/outgoing/red_alert-{{ item }}.call"
-    owner: root
+    owner: asterisk
     group: asterisk
     mode: 0664
   with_items: "{{ destinations }}"
