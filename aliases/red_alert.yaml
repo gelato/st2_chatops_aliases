@@ -10,15 +10,12 @@
   result:
     format: |
       Запуск задания тревоги: {~}
-      # {% if execution.result.stderr %}
-      # *Exit Status*: `{{ execution.result.return_code }}`
-      # *Stderr:* ```{{ execution.result.stderr }}```
-      # *Stdout:*
-      # {% endif %}
-      # ```{{ execution.result.stdout }}```
-      {% for host, result in execution.result.stdout.stats.iteritems() %}
-        {{ host }}: ```{{ result }}```
-      {% endfor %}
+      {% if execution.result.stderr %}
+      *Exit Status*: `{{ execution.result.return_code }}`
+      *Stderr:* ```{{ execution.result.stderr }}```
+      *Stdout:*
+      {% endif %}
+      ```{{ execution.result.stdout }}```
     extra:
       slack:
         color: "{% if execution.result.succeeded %}good{% else %}danger{% endif %}"
