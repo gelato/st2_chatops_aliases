@@ -24,6 +24,7 @@
     group: asterisk
     mode: 0664
   with_items: "{{ destinations }}"
+  delegate_to: localhost
 
 - name: Transfer template file to asterisk
   copy:
