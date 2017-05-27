@@ -16,7 +16,7 @@
 - name: Transfer template to server
   template:
     src: /opt/stackstorm/packs/st2_chatops_aliases/playbooks/roles/red_alert/templates/red_alert.j2
-    dest: /var/spool/asterisk/outgoing
+    dest: /var/spool/asterisk/outgoing/red_allert.call
     owner: root
     group: asterisk
     mode: 0664
