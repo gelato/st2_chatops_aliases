@@ -8,10 +8,13 @@
     group: asterisk
     mode: 0664
   with_items:
-  #  - gsm
-  #  - alaw
+   - gsm
+   - alaw
    - wav
-  #  - ulaw
+   - ulaw
+   - g722
+   - sln
+   - g729
 
 - name: Transfer template to server
   template:
