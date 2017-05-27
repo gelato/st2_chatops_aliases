@@ -8,6 +8,15 @@
       representation:
         - "red alert {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}}"
         - alert panin {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['pan']"}}
+        - alert belousov {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['bel']"}}
+        - alert lisovik {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['lis']"}}
+        - alert guk {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['guk']"}}
+        - alert hmelev {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['hme']"}}
+        - alert kirilchuk {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['kir']"}}
+        - alert meysak {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['mej']"}}
+        - alert orlov {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['orl']"}}
+        - alert osman {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['osm']"}}
+        - alert roman {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['tka']"}}
   result:
     format: |
       Red alert task launch: {~}

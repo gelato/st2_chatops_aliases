@@ -3,6 +3,15 @@
   destinations:
     - pan1
     - pan
+    - bel
+    - guk
+    - lis
+    - hme
+    - kir
+    - mej
+    - orl
+    - osm
+    - tka
   alert_sound_file: red_alert
   sip_context: from-internal
   max_retries: 100
