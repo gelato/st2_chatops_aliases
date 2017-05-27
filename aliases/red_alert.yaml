@@ -2,7 +2,7 @@
 
   name: chatops.ansible_red_alert
   action_ref: ansible.playbook
-  description: red alert - call all, other options: alert panin, alert belousov, alert lisovik, alert guk, alert hmelev, alert kirilchuk, alert meysak, alert orlov, alert osman, alert roman.
+  description: red alert - call all, other options - alert panin, alert belousov, alert lisovik, alert guk, alert hmelev, alert kirilchuk, alert meysak, alert orlov, alert osman, alert roman.
   formats:
     - display: "red alert"
       representation:
