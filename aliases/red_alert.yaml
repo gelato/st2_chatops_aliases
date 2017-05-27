@@ -7,15 +7,19 @@
     - display: "red alert"
       representation:
         - "red alert {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}}"
+        - "red alert panin {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars='destinations=['pan']'}}"
   result:
     format: |
-      Run red alert task on `{{ execution.parameters.hosts }}` host(s): {~}
-      {% if execution.result.stderr %}
-      *Exit Status*: `{{ execution.result.return_code }}`
-      *Stderr:* ```{{ execution.result.stderr }}```
-      *Stdout:*
-      {% endif %}
-      ```{{ execution.result.stdout }}```
+      Запуск задания тревоги: {~}
+      # {% if execution.result.stderr %}
+      # *Exit Status*: `{{ execution.result.return_code }}`
+      # *Stderr:* ```{{ execution.result.stderr }}```
+      # *Stdout:*
+      # {% endif %}
+      # ```{{ execution.result.stdout }}```
+      {% for host, result in execution.result.stdout.stats.iteritems() %}
+        {{ host }}: ```{{ result }}```
+      {% endfor %}
     extra:
       slack:
         color: "{% if execution.result.succeeded %}good{% else %}danger{% endif %}"
