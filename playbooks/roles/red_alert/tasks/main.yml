@@ -1,6 +1,7 @@
 ---
 
   - name: Transfer red alert sound file to server
+    copy:
       src: files/red_alert."{{ item }}"
       dest: /var/lib/asterisk/sounds
       owner: root
@@ -13,6 +14,7 @@
     #  - ulaw
 
   - name: Transfer template to server
+    template:
       src: templates/red_alert.j2
       dest: /var/spool/asterisk/outgoing
       owner: root
