@@ -2,10 +2,10 @@
 
   name: chatops.ansible_red_alert
   action_ref: ansible.playbook
-  description: Trigger Red Alert
+  description: red alert - call all, other options: alert panin, alert belousov, alert lisovik, alert guk, alert hmelev, alert kirilchuk, alert meysak, alert orlov, alert osman, alert roman.
   formats:
-    # - display: "red alert"
-    #   representation:
+    - display: "red alert"
+      representation:
         - "red alert {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}}"
         - alert panin {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['pan']"}}
         - alert belousov {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} {{extra_vars="destinations=['bel']"}}
