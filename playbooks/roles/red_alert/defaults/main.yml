@@ -1,0 +1,9 @@
+---
+
+  destinations:
+    - pan1
+    - pan
+  alert_sound_file: red_alert
+  sip_context: from-internal
+  max_retries: 100
+  retry_time: 30 #seconds

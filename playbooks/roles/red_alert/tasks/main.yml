@@ -16,10 +16,20 @@
    - sln
    - g729
 
-- name: Transfer template to server
+- name: Generate template file on server
   template:
-    src: /opt/stackstorm/packs/st2_chatops_aliases/playbooks/roles/red_alert/templates/red_alert.j2
-    dest: /var/spool/asterisk/outgoing/red_allert.call
-    # owner: root
-    # group: asterisk
-    # mode: 0664
+    src: "/opt/stackstorm/packs/st2_chatops_aliases/playbooks/roles/red_alert/templates/red_alert-{{ item }}.j2"
+    dest: "/opt/stackstorm/packs/st2_chatops_aliases/playbooks/roles/red_alert/files/red_allert-{{ item }}.call"
+    owner: root
+    group: asterisk
+    mode: 0664
+  with_items: "{{ destinations }}"
+
+- name: Transfer template file to asterisk
+  copy:
+    src: "/opt/stackstorm/packs/st2_chatops_aliases/playbooks/roles/red_alert/files/red_alert-{{ item }}.call"
+    dest: "/var/spool/asterisk/outgoing/red_allert-{{ item }}.call"
+    owner: root
+    group: asterisk
+    mode: 0664
+  with_items: "{{ destinations }}"
