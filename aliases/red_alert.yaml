@@ -4,8 +4,8 @@
   action_ref: ansible.playbook
   description: Trigger Red Alert
   formats:
-    - display: "red alert"
-      representation:
+    # - display: "red alert"
+    #   representation:
         - "red alert {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}}"
         - "red alert {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}} panin {{extra_vars='destinations=['pan']'}}"
   result:
