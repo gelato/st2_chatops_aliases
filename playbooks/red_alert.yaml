@@ -1,5 +1,5 @@
 ---
-- name: Update package on remote hosts, run on 25% of servers at a time
+- name: Run red alert procedure
   hosts: red_alert
   become: True
   become_user: root
