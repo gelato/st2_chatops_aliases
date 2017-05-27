@@ -1,8 +1,5 @@
 ---
 
-- name: Install selinux bindings
-  yum: name=libselinux-python state=present
-
 - name: Transfer red alert sound file to server
   copy:
     src: "/opt/stackstorm/packs/st2_chatops_aliases/playbooks/roles/red_alert/files/red_alert.{{ item }}"
