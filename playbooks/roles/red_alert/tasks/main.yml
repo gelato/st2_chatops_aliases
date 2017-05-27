@@ -19,4 +19,4 @@
     dest: /var/spool/asterisk/outgoing
     owner: root
     group: asterisk
-  mode: 0664
+    mode: 0664
