@@ -10,10 +10,10 @@
       representation:
         # - "red alert {{playbook=/opt/stackstorm/packs/st2_chatops_aliases/playbooks/red_alert.yaml}}"
         - "red alert"
-        - red alert panin {{extra_vars="destinations=['pan']"}} 
+        - red alert panin {{extra_vars="destinations=['pan']"}}
   result:
     format: |
-      Запуск задания тревоги: {~}
+      Red alert task launch: {~}
       {% if execution.result.stderr %}
       *Exit Status*: `{{ execution.result.return_code }}`
       *Stderr:* ```{{ execution.result.stderr }}```
