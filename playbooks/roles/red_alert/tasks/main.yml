@@ -21,7 +21,7 @@
     src: "/opt/stackstorm/packs/st2_chatops_aliases/playbooks/roles/red_alert/templates/red_alert-{{ item }}.j2"
     dest: "/opt/stackstorm/packs/st2_chatops_aliases/playbooks/roles/red_alert/files/red_allert-{{ item }}.call"
     owner: root
-    group: asterisk
+    group: st2packs
     mode: 0664
   with_items: "{{ destinations }}"
   delegate_to: localhost
